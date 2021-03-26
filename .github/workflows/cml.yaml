@@ -19,7 +19,6 @@ jobs:
           cat sklearn_metrics.txt >> report.md
 
           # Add charts
-          echo "## Data viz" >> report.md
           cml-publish sklearn_mlp_loss_curve.png --md >> report.md
 
           # Generate report
