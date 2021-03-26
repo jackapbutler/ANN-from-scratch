@@ -1,0 +1,19 @@
+name: diabetes-sklearn-mlp
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: docker://dvcorg/cml-py3:latest # this is part of CML (can use others)
+    steps:
+      - uses: actions/checkout@v2
+      - name: cml_run
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+
+          # ML Workflow goes here
+          pip install -r requirements.txt
+          python 02_sklearn_mlp.py
+
+          echo "Model Metrics"
+          cat metrics.txt

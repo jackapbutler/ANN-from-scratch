@@ -13,7 +13,7 @@ X = pd.read_csv('./data/diabetes.csv')
 y = X.pop('Outcome') # ejects quality column as labels
 
 # Train / Test Split
-X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=seed)
+X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.20, random_state=seed)
 
 # Fit model
 mlp = MLPClassifier(hidden_layer_sizes=[50, 100, 150, 100, 50], random_state=seed)
@@ -24,8 +24,16 @@ train_preds = mlp.predict(X_tr)
 test_preds = mlp.predict(X_te)
 
 # Results
-train_score = accuracy_score(y_tr, train_preds)
-test_score = accuracy_score(y_te, test_preds)
-print(mlp.loss_curve_)
+train_score = accuracy_score(y_tr, train_preds)*100
+test_score = accuracy_score(y_te, test_preds)*100
 
 # Write this to 
+with open('sklearn_metrics.txt', 'w') as outfile:
+    outfile.write('Training accuracy: '+str(round(train_score, 4))+'%.')
+    outfile.write('Testing accuracy: '+str(round(test_score, 4))+'%.')
+
+# Plot loss curve 
+plt.plot(mlp.loss_curve_)
+plt.title('MLP Error')
+plt.savefig("sklearn_mlp_loss_curve.png")
+plt.close()
