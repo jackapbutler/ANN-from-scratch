@@ -1,0 +1,8 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: python 02a_sklearn_getdata.py
+    deps:
+    - path: 02a_sklearn_getdata.py
+      md5: 9a9153992327427ba5090f2b7fb07f34
+      size: 351

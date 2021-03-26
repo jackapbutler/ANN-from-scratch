@@ -79,7 +79,7 @@ ax = plt.axes(projection='3d')
 ax.scatter3D(w1, w2, w3, c=err, cmap=GnRd)
 plt.title('3 Neuron Weights over '+str(epochs)+' epochs, coloured by Error')
 plt.show()
-print(neuron_weights)
+
 # Simple error overtime
 plt.plot(err)
 plt.title('Error over progression over '+str(epochs)+' epochs.')

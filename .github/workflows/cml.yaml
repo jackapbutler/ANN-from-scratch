@@ -12,7 +12,7 @@ jobs:
         run: |
           # Install packages and run scripts
           sudo -H pip install -r requirements.txt
-          python 02_sklearn_MLP.py
+          python 02c_sklearn_MLP.py
           
           # Publich metrics
           echo "## Model Metrics" > report.md

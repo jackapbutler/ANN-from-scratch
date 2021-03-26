@@ -9,7 +9,7 @@ import pandas as pd
 seed = 32
 
 # Data
-X = pd.read_csv('./data/diabetes.csv')
+X = pd.read_csv('./data/processed_data.csv')
 y = X.pop('Outcome') # ejects quality column as labels
 
 # Train / Test Split
