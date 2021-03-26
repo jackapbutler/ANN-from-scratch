@@ -1,4 +1,4 @@
-# ANN-from-scratch
+# ANN-from-Scratch + MLOps Fundamentals
 Building an artificial neural network using only the NumPy Python library along with MLOps fundamentals.<br>
 
 ## Perceptron
