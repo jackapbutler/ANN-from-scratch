@@ -6,3 +6,20 @@ stages:
     - path: 02a_sklearn_getdata.py
       md5: 9a9153992327427ba5090f2b7fb07f34
       size: 351
+    outs:
+    - path: ./data/diabetes.csv
+      md5: b43dd020fa775d93fced49f959c227ed
+      size: 23873
+  process_data:
+    cmd: python 02b_sklearn_processdata.py
+    deps:
+    - path: ./data/diabetes.csv
+      md5: b43dd020fa775d93fced49f959c227ed
+      size: 23873
+    - path: 02b_sklearn_processdata.py
+      md5: 78af5037402d7173e2d062ce628b9069
+      size: 117
+    outs:
+    - path: ./data/processed_data.csv
+      md5: 60acca81995dc9744b499005ecfe6f2a
+      size: 24059
