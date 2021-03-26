@@ -19,3 +19,5 @@ jobs:
           # Add chart
           echo "## Neural Network Loss Overtime"
           cml-publish ./images/sklearn_mlp_loss_curve.png --md >> report.md
+          
+          cml-send-comment report.md
