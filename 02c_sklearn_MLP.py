@@ -33,11 +33,11 @@ scores = {}
 scores['Train accuracy'] = [train_score]
 scores['Test accuracy'] = [test_score]
 
-with open('sklearn_metrics.json', 'w') as outfile:
+with open('./metrics/sklearn_metrics.json', 'w') as outfile:
     json.dump(scores, outfile)
 
 # Write this to 
-with open('sklearn_metrics.txt', 'w') as outfile:
+with open('./metrics/sklearn_metrics.txt', 'w') as outfile:
     outfile.write('Training accuracy: '+str(round(train_score, 4))+'%.')
     outfile.write(' ')
     outfile.write('Testing accuracy: '+str(round(test_score, 4))+'%.')
@@ -45,5 +45,5 @@ with open('sklearn_metrics.txt', 'w') as outfile:
 # Plot loss curve 
 plt.plot(mlp.loss_curve_)
 plt.title('MLP Error')
-plt.savefig("sklearn_mlp_loss_curve.png")
+plt.savefig("./images/sklearn_mlp_loss_curve.png")
 plt.close()

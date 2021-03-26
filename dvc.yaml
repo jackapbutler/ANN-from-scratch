@@ -20,7 +20,7 @@ stages:
     - 02c_sklearn_MLP.py
     - ./data/processed_data.csv
     outs:
-    - sklearn_mlp_loss_curve.png
+    - ./images/sklearn_mlp_loss_curve.png
     metrics:
-    - sklearn_metrics.json:
+    - ./metrics/sklearn_metrics.json:
         cache: false
