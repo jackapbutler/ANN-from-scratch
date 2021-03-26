@@ -17,7 +17,7 @@ y = X.pop('Outcome') # ejects quality column as labels
 X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.20, random_state=seed)
 
 # Fit model
-mlp = MLPClassifier(hidden_layer_sizes=[40, 75, 125, 75, 40], random_state=seed)
+mlp = MLPClassifier(hidden_layer_sizes=[50, 75, 150, 75, 50], random_state=seed)
 mlp.fit(X_tr, y_tr)
 
 # Make predictions
