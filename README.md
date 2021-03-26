@@ -6,3 +6,5 @@ Building an artificial neural network using only the NumPy Python library along 
 
 ## MLP
 ![Image of network](mlp.PNG)
+
+## Sklearn's MLP and MLOps Workflow
