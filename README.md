@@ -10,3 +10,4 @@ Building an artificial neural network using only the NumPy Python library along 
 ## Sklearn's MLP and MLOps Workflow
 - Used Sklearn's MLPClassifier to perform classification on a diabetes dataset.
 - Automated the generation of reports and accuracy statistics using CML and GitHub Actions.
+- Used DVC to automate a pipeline for getting data, processing data, training a model and storing metrics.

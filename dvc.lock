@@ -30,12 +30,12 @@ stages:
       md5: 60acca81995dc9744b499005ecfe6f2a
       size: 24059
     - path: 02c_sklearn_MLP.py
-      md5: fff2981aff1b993075287c0c1305533e
-      size: 1151
+      md5: 9aa89a34bf1c2a0f52f6ef3e02833c4f
+      size: 1349
     outs:
-    - path: sklearn_metrics.txt
-      md5: 7ab08c0e27b0d06e5c49ddf24a0db4e8
-      size: 56
+    - path: sklearn_metrics.json
+      md5: 6555d1170876ede6e207d2be75298fb4
+      size: 76
     - path: sklearn_mlp_loss_curve.png
       md5: d00712f36d96a063ea2cf6f897e24208
       size: 20537
