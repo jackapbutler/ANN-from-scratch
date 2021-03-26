@@ -1,4 +1,5 @@
 stages:
+
   get_data:
     cmd: python 02a_sklearn_getdata.py
     deps:
