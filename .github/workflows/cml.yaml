@@ -10,9 +10,17 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Your ML workflow goes here
+          # Install packages and run scripts
           sudo -H pip install -r requirements.txt
           python 02_sklearn_MLP.py
           
-          echo "Model Metrics"
-          cat sklearn_metrics.txt
+          # Publich metrics
+          echo "## Model Metrics" > report.md
+          cat sklearn_metrics.txt >> report.md
+
+          # Add charts
+          echo "Data Viz"
+          cml-publish sklearn_mlp_loss_curve.png --md >> report.md
+
+          # Generate report
+          cml-send-comment report.md
