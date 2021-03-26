@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 import pandas as pd
+import json
 
 # set seed
 seed = 32
@@ -26,6 +27,14 @@ test_preds = mlp.predict(X_te)
 # Results
 train_score = accuracy_score(y_tr, train_preds)*100
 test_score = accuracy_score(y_te, test_preds)*100
+
+
+scores = {}
+scores['Train accuracy'] = [train_score]
+scores['Test accuracy'] = [test_score]
+
+with open('sklearn_metrics.json', 'w') as outfile:
+    json.dump(scores, outfile)
 
 # Write this to 
 with open('sklearn_metrics.txt', 'w') as outfile:
