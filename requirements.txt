@@ -1,6 +1,5 @@
 # This file may be used to create an environment:
 scikit-learn
-os
 numpy
 pandas
 matplotlib
