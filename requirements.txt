@@ -6,5 +6,4 @@ scikit-learn
 numpy
 pandas
 matplotlib
-time
 mpl_toolkits
