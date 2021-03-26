@@ -30,6 +30,7 @@ test_score = accuracy_score(y_te, test_preds)*100
 # Write this to 
 with open('sklearn_metrics.txt', 'w') as outfile:
     outfile.write('Training accuracy: '+str(round(train_score, 4))+'%.')
+    outfile.write(' ')
     outfile.write('Testing accuracy: '+str(round(test_score, 4))+'%.')
 
 # Plot loss curve 
