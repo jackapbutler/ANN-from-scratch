@@ -33,11 +33,11 @@ scores = {}
 scores['Train accuracy'] = [train_score]
 scores['Test accuracy'] = [test_score]
 
-with open('./metrics/sklearn_metrics.json', 'w') as outfile:
+with open('./metrics/metrics.json', 'w') as outfile:
     json.dump(scores, outfile)
 
 # Write this to 
-with open('./metrics/sklearn_metrics.txt', 'w') as outfile:
+with open('./metrics/metrics.txt', 'w') as outfile:
     outfile.write('Training accuracy: '+str(round(train_score, 4))+'%.')
     outfile.write(' ')
     outfile.write('Testing accuracy: '+str(round(test_score, 4))+'%.')
