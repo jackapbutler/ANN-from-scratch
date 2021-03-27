@@ -17,7 +17,7 @@ jobs:
           dvc metrics diff --show-md main > report.md
 
           # Add chart
-          echo "## Neural Network Loss Overtime"
+          echo "## Neural Network Loss Overtime" >> report.md
           cml-publish ./images/sklearn_mlp_loss_curve.png --md >> report.md
           
           cml-send-comment report.md

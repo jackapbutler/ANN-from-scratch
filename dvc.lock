@@ -36,6 +36,6 @@ stages:
     - path: ./images/sklearn_mlp_loss_curve.png
       md5: d00712f36d96a063ea2cf6f897e24208
       size: 20537
-    - path: ./metrics/metrics.json
+    - path: metrics.json
       md5: 6555d1170876ede6e207d2be75298fb4
       size: 76

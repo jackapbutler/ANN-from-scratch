@@ -23,5 +23,5 @@ stages:
     outs:
     - ./images/sklearn_mlp_loss_curve.png
     metrics:
-    - ./metrics/metrics.json:
+    - metrics.json:
         cache: false
