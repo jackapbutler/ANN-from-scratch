@@ -4,23 +4,25 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 import pandas as pd
+
 import json
 import pickle 
 import os
+import yaml
 
-# set seed
-seed = 32
+# parameters
+params = yaml.safe_load(open('./experiments/params.yaml'))['train_model']
 
 # Data
 X = pd.read_csv('./data/processed_data.csv')
 y = X.pop('Outcome') # ejects quality column as labels
 
 # Train / Test Split
-X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.20, random_state=seed)
+X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.20)
 
 # Fit model
-layers = [50, 75, 1000, 75, 50]
-mlp = MLPClassifier(hidden_layer_sizes=layers, random_state=seed)
+layers = params['layers']
+mlp = MLPClassifier(hidden_layer_sizes=layers)
 mlp.fit(X_tr, y_tr)
 
 # Make predictions

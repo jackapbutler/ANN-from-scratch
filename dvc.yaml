@@ -16,13 +16,25 @@ stages:
     - ./data/processed_data.csv
 
   train_model:
-    cmd: python 02c_sklearn_MLP.py
+    cmd: python 02c_sklearn_train.py
     deps:
-    - 02c_sklearn_MLP.py
+    - 02c_sklearn_train.py
     - ./data/processed_data.csv
     outs:
     - ./images/sklearn_mlp_loss_curve.png
     - ./models/sklearn_neuralnet.pkl
     metrics:
     - ./metrics/metrics.json:
+        cache: false
+  evaluate:
+    cmd: python 02d_sklearn_evaluate.py 
+    deps:
+    - data/processed_data.csv
+    - models/sklearn_neuralnet.pkl
+    - 02d_sklearn_evaluate.py
+    metrics:
+    - ./metrics/eval_score.json:
+        cache: false
+    plots:
+    - ./metrics/eval_prc.json:
         cache: false
