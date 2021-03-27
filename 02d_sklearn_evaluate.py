@@ -2,28 +2,21 @@ import sys
 import os
 import pickle
 import json
-
+import pandas as pd
 import sklearn.metrics as metrics
 
-if len(sys.argv) != 6:
-    sys.stderr.write('Arguments error. Usage:\n')
-    sys.stderr.write('\tpython evaluate.py model features scores prc roc\n')
-    sys.exit(1)
-
-model_file = sys.argv[1]
-matrix_file = os.path.join(sys.argv[2], 'test.pkl')
-scores_file = sys.argv[3]
-prc_file = sys.argv[4]
-roc_file = sys.argv[5]
+# Files
+model_file = './models/sklearn_neuralnet.pkl'
+data_file = './data/processed_data.csv'
+scores_file = './metrics/eval_score.json'
+prc_file = './metrics/eval_prc.json'
+roc_file = './metrics/eval_roc.json'
 
 with open(model_file, 'rb') as fd:
     model = pickle.load(fd)
 
-with open(matrix_file, 'rb') as fd:
-    matrix = pickle.load(fd)
-
-labels = matrix[:, 1].toarray()
-x = matrix[:, 2:]
+x = pd.read_csv(data_file)
+labels = x.pop('Outcome') # ejects quality column as labels
 
 predictions_by_class = model.predict_proba(x)
 predictions = predictions_by_class[:, 1]
