@@ -34,7 +34,7 @@ scores = {}
 scores['Train accuracy'] = [train_score]
 scores['Test accuracy'] = [test_score]
 
-with open('metrics.json', 'w') as outfile:
+with open('./metrics/metrics.json', 'w') as outfile:
     json.dump(scores, outfile)
 
 # Plot loss curve 
