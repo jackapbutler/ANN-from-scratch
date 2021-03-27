@@ -1,4 +1,4 @@
-# ANN-from-Scratch + MLOps Fundamentals
+# ANN-from-Scratch 
 Building an artificial neural network using only the NumPy Python library along with MLOps fundamentals.<br>
 
 ## Perceptron
@@ -7,6 +7,7 @@ Building an artificial neural network using only the NumPy Python library along 
 ## MLP
 ![Image of network](images/mlp.PNG)
 
+# MLOps Fundamentals
 ## Sklearn's MLP and DVC MLOps Workflow
 - Used Sklearn's MLPClassifier to perform classification on a diabetes dataset.
 ### When a push is made the following occurs:
