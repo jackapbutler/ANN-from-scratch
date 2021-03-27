@@ -1,8 +1,10 @@
+# Because they're run from DVC these test files actually are in the previous directory!
+
 import pickle
 from sklearn.datasets import make_classification
 import json
 
-model_file = '../models/sklearn_neuralnet.pkl'
+model_file = './models/sklearn_neuralnet.pkl'
 model = pickle.load(open(model_file, "rb"))
 
 # Generate some data for validation
