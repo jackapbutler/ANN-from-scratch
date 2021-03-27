@@ -5,6 +5,8 @@ from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 import pandas as pd
 import json
+import pickle 
+import os
 
 # set seed
 seed = 32
@@ -28,7 +30,6 @@ test_preds = mlp.predict(X_te)
 train_score = accuracy_score(y_tr, train_preds)*100
 test_score = accuracy_score(y_te, test_preds)*100
 
-
 scores = {}
 scores['Train accuracy'] = [train_score]
 scores['Test accuracy'] = [test_score]
@@ -36,14 +37,15 @@ scores['Test accuracy'] = [test_score]
 with open('metrics.json', 'w') as outfile:
     json.dump(scores, outfile)
 
-# # Write this to 
-# with open('metrics.txt', 'w') as outfile:
-#     outfile.write('Training accuracy: '+str(round(train_score, 4))+'%.')
-#     outfile.write(' ')
-#     outfile.write('Testing accuracy: '+str(round(test_score, 4))+'%.')
-
 # Plot loss curve 
 plt.plot(mlp.loss_curve_)
 plt.title('MLP Error')
 plt.savefig("./images/sklearn_mlp_loss_curve.png")
 plt.close()
+
+# Write the model to a file
+if not os.path.isdir("models/"):
+    os.mkdir("models")
+
+filename = 'models/sklearn_neuralnet.pkl'
+pickle.dump(mlp, open(filename, 'wb'))
