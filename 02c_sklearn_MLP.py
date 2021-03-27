@@ -17,11 +17,7 @@ y = X.pop('Outcome') # ejects quality column as labels
 X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.20, random_state=seed)
 
 # Fit model
-<<<<<<< Updated upstream
-mlp = MLPClassifier(hidden_layer_sizes=[50, 75, 1000, 75, 50], random_state=seed)
-=======
 mlp = MLPClassifier(hidden_layer_sizes=[50, 75, 200, 75, 50], random_state=seed)
->>>>>>> Stashed changes
 mlp.fit(X_tr, y_tr)
 
 # Make predictions
@@ -37,14 +33,14 @@ scores = {}
 scores['Train accuracy'] = [train_score]
 scores['Test accuracy'] = [test_score]
 
-with open('./metrics/metrics.json', 'w') as outfile:
+with open('metrics.json', 'w') as outfile:
     json.dump(scores, outfile)
 
-# Write this to 
-with open('./metrics/metrics.txt', 'w') as outfile:
-    outfile.write('Training accuracy: '+str(round(train_score, 4))+'%.')
-    outfile.write(' ')
-    outfile.write('Testing accuracy: '+str(round(test_score, 4))+'%.')
+# # Write this to 
+# with open('metrics.txt', 'w') as outfile:
+#     outfile.write('Training accuracy: '+str(round(train_score, 4))+'%.')
+#     outfile.write(' ')
+#     outfile.write('Testing accuracy: '+str(round(test_score, 4))+'%.')
 
 # Plot loss curve 
 plt.plot(mlp.loss_curve_)
