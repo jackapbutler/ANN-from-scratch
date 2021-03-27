@@ -28,9 +28,4 @@ jobs:
           echo "## Comparison to Main" >> report.md
           dvc metrics diff --show-md >> report.md
 
-          echo "## Paste this into browser to view Chart"
-          dvc plots diff -x recall -y precision >> report.md
-          
-
-
           cml-send-comment report.md
