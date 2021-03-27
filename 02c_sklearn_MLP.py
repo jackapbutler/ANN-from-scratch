@@ -19,7 +19,8 @@ y = X.pop('Outcome') # ejects quality column as labels
 X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.20, random_state=seed)
 
 # Fit model
-mlp = MLPClassifier(hidden_layer_sizes=[50, 75, 1000, 75, 50], random_state=seed)
+layers = [50, 75, 1000, 75, 50]
+mlp = MLPClassifier(hidden_layer_sizes=layers, random_state=seed)
 mlp.fit(X_tr, y_tr)
 
 # Make predictions
@@ -39,7 +40,7 @@ with open('./metrics/metrics.json', 'w') as outfile:
 
 # Plot loss curve 
 plt.plot(mlp.loss_curve_)
-plt.title('MLP Error')
+plt.title('Neural Network Layers: '+str(layers))
 plt.savefig("./images/sklearn_mlp_loss_curve.png")
 plt.close()
 
