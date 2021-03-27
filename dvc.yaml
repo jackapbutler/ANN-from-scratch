@@ -41,7 +41,7 @@ stages:
     - ./metrics/eval_prc.json:
         cache: false
 
-    test_model:
-      cmd: python ./tests/test_fit.py
-      deps:
+  test_model:
+    cmd: python ./tests/test_fit.py
+    deps:
     - models/sklearn_neuralnet.pkl
