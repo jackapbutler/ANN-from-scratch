@@ -1,2 +1,2 @@
 train_model:
-  layers: [200, 1000, 200]
+  layers: [50, 80, 120, 80, 50]
