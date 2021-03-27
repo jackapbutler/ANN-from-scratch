@@ -30,15 +30,34 @@ stages:
       md5: 60acca81995dc9744b499005ecfe6f2a
       size: 24059
     - path: 02c_sklearn_train.py
-      md5: 761da71c4111f7508d740719f0377e9c
-      size: 1362
+      md5: afd2ae02cb1ac6e6d3664e4f3e275e96
+      size: 1399
     outs:
     - path: ./images/sklearn_mlp_loss_curve.png
-      md5: c9d3f6b6f292a3a5ad9df68dccd0bd5c
-      size: 19827
+      md5: 55fec81a98cb19b1f7aa5f0594b25fae
+      size: 24276
     - path: ./metrics/metrics.json
-      md5: ff38e0e31ae646cb3d79c7cfd47c47c8
-      size: 76
+      md5: b85816b28d875d26d3aa3f9aedffde82
+      size: 77
     - path: ./models/sklearn_neuralnet.pkl
-      md5: e681d2da3a6c742c4f2de457c732f160
-      size: 3827005
+      md5: 3f2c44c17bf99efaabf60b835c9c39d0
+      size: 743388
+  evaluate:
+    cmd: python 02d_sklearn_evaluate.py
+    deps:
+    - path: 02d_sklearn_evaluate.py
+      md5: 0da504f76c0d35c6c596389c6d2dcd80
+      size: 1414
+    - path: data/processed_data.csv
+      md5: 60acca81995dc9744b499005ecfe6f2a
+      size: 24059
+    - path: models/sklearn_neuralnet.pkl
+      md5: 3f2c44c17bf99efaabf60b835c9c39d0
+      size: 743388
+    outs:
+    - path: ./metrics/eval_prc.json
+      md5: 54b91fb7b6cbac67bd07e68268dd6eb9
+      size: 115946
+    - path: ./metrics/eval_score.json
+      md5: 58bfe60e115d19d2bbb442c3ac9b1a9d
+      size: 76

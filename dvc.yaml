@@ -26,3 +26,15 @@ stages:
     metrics:
     - ./metrics/metrics.json:
         cache: false
+  evaluate:
+    cmd: python 02d_sklearn_evaluate.py 
+    deps:
+    - data/processed_data.csv
+    - models/sklearn_neuralnet.pkl
+    - 02d_sklearn_evaluate.py
+    metrics:
+    - ./metrics/eval_score.json:
+        cache: false
+    plots:
+    - ./metrics/eval_prc.json:
+        cache: false
