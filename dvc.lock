@@ -4,8 +4,8 @@ stages:
     cmd: python 02a_sklearn_getdata.py
     deps:
     - path: 02a_sklearn_getdata.py
-      md5: 9a9153992327427ba5090f2b7fb07f34
-      size: 351
+      md5: 068acc6f767a5220c01e6cb5c13847bd
+      size: 134
     outs:
     - path: ./data/diabetes.csv
       md5: b43dd020fa775d93fced49f959c227ed

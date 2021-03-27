@@ -22,6 +22,7 @@ stages:
     - ./data/processed_data.csv
     outs:
     - ./images/sklearn_mlp_loss_curve.png
+    - ./models/sklearn_neuralnet.pkl
     metrics:
     - ./metrics/metrics.json:
         cache: false
