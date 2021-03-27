@@ -26,8 +26,8 @@ jobs:
 
           # Evaluation metrics
           echo "## Evaluation Metrics" >> report.md
-          dvc metrics diff >> report.md
-          dvc plots diff -x recall -y precision >> report.md
+          dvc metrics diff --show-md >> report.md
+          dvc plots show diff -x recall -y precision >> report.md
           
 
 
