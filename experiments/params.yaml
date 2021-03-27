@@ -1,2 +1,0 @@
-train_model:
-  layers: [50, 80, 120, 80, 50]
