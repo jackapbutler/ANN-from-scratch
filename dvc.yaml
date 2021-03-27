@@ -22,20 +22,19 @@ stages:
     - ./data/processed_data.csv
     outs:
     - ./images/sklearn_mlp_loss_curve.png
-<<<<<<< Updated upstream
-=======
     - ./models/sklearn_neuralnet.pkl
-
-  evaluate:
-    cmd: python 02d_sklearn_evaluate.py ./models/sklearn_neuralnet.pkl ./data/processed_data.csv
-    deps:
-    - ./data/processed_data.csv
-    - ./models/sklearn_neuralnet.pkl
-    - 02d_sklearn_evaluate.py
->>>>>>> Stashed changes
     metrics:
-    - scores.json:
+    - ./metrics/metrics.json:
         cache: false
-    plots:
-    - prc.json:
-        cache: false
+  # evaluate:
+  #   cmd: python 02d_sklearn_evaluate.py models/sklearn_neuralnet.pkl data/processed_data.csv experiments/eval_scores.json images/prc.json
+  #   deps:
+  #   - data/processed_data.csv
+  #   - models/sklearn_neuralnet.pkl
+  #   - 02d_sklearn_evaluate.py
+  #   metrics:
+  #   - experiments/eval_scores.json:
+  #       cache: false
+  #   plots:
+  #   - images/prc.json:
+  #       cache: false
