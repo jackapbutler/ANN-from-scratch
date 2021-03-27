@@ -24,11 +24,12 @@ stages:
       md5: 60acca81995dc9744b499005ecfe6f2a
       size: 24059
   train_model:
-    cmd: python 02c_sklearn_MLP.py
+    cmd: python 02c_sklearn_train.py
     deps:
     - path: ./data/processed_data.csv
       md5: 60acca81995dc9744b499005ecfe6f2a
       size: 24059
+<<<<<<< Updated upstream
     - path: 02c_sklearn_MLP.py
 <<<<<<< Updated upstream
       md5: 6818f7bb606265b0656e6b419cc8c222
@@ -50,6 +51,15 @@ stages:
     - path: ./metrics/metrics.json
       md5: 729c9a39fe2a7c7043ce26abd7f938f1
       size: 76
+=======
+    - path: 02c_sklearn_train.py
+      md5: 761da71c4111f7508d740719f0377e9c
+      size: 1362
+    outs:
+    - path: ./images/sklearn_mlp_loss_curve.png
+      md5: c9d3f6b6f292a3a5ad9df68dccd0bd5c
+      size: 19827
+>>>>>>> Stashed changes
     - path: ./models/sklearn_neuralnet.pkl
       md5: c014908b87bb3e9faf64af72d2de5b58
       size: 743216
