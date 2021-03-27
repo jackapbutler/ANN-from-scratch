@@ -1,4 +1,4 @@
-# ANN-from-Scratch + MLOps Fundamentals
+# ANN-from-Scratch 
 Building an artificial neural network using only the NumPy Python library along with MLOps fundamentals.<br>
 
 ## Perceptron
@@ -7,9 +7,11 @@ Building an artificial neural network using only the NumPy Python library along 
 ## MLP
 ![Image of network](images/mlp.PNG)
 
-## Sklearn's MLP and MLOps Workflow
+# MLOps Fundamentals
+## Sklearn's MLP and DVC MLOps Workflow
 - Used Sklearn's MLPClassifier to perform classification on a diabetes dataset.
+
+### When a push is made to a new branch the following occurs:
+- Automate the unit testing on a dummy dataset with a certain number of features.
+- Automate a pipeline for getting data, processing data, training a model and storing metrics.
 - Automated the generation of reports and accuracy statistics using CML and GitHub Actions.
-- Used DVC to automate a pipeline for getting data, processing data, training a model and storing metrics.
-- Used a further DVC process to automate the pipeline, reports and comparison to other branches.
-- Integrated model unit testing on a dummy dataset with a certain number of features. 

@@ -60,4 +60,16 @@ stages:
       size: 115946
     - path: ./metrics/eval_score.json
       md5: 58bfe60e115d19d2bbb442c3ac9b1a9d
+    - path: 02c_sklearn_MLP.py
+      md5: 761da71c4111f7508d740719f0377e9c
+      size: 1362
+    outs:
+    - path: ./images/sklearn_mlp_loss_curve.png
+      md5: c9d3f6b6f292a3a5ad9df68dccd0bd5c
+      size: 19827
+    - path: ./metrics/metrics.json
+      md5: ff38e0e31ae646cb3d79c7cfd47c47c8
       size: 76
+    - path: ./models/sklearn_neuralnet.pkl
+      md5: e681d2da3a6c742c4f2de457c732f160
+      size: 3827005
