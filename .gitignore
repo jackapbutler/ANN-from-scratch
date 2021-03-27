@@ -1,8 +1,5 @@
 *.csv
 sklearn_mlp_loss_curve.png
-<<<<<<< Updated upstream
-*.pkl
-=======
 *.html
 # *.pkl
->>>>>>> Stashed changes
+
