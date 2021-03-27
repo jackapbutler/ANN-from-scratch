@@ -1,5 +1,5 @@
 import pickle
-from sklearn.datasets import make_regression
+from sklearn.datasets import make_classification
 import json
 
 model = pickle.load(open("../models/sklearn_neuralnet.pkl", "rb"))
