@@ -14,10 +14,13 @@ jobs:
           dvc repro
 
           git fetch --prune
-          dvc metrics diff main --target metrics.json --show-md >> report.md
 
           # Add chart
           echo "## Neural Network Loss Overtime" >> report.md
           cml-publish ./images/sklearn_mlp_loss_curve.png --md >> report.md
+          
+          # Show metrics
+          echo "## Accuracy Metrics" >> report.md
+          cat ./metrics/metrics.json >> report.md
           
           cml-send-comment report.md
