@@ -36,8 +36,8 @@ test_score = accuracy_score(y_te, test_preds)*100
 scores = {}
 scores['Train accuracy'] = [train_score]
 scores['Test accuracy'] = [test_score]
-
-with open('./metrics/metrics.json', 'w') as outfile:
+print(scores)
+with open('./metrics/train_metrics.json', 'w') as outfile:
     json.dump(scores, outfile)
 
 # Plot loss curve 

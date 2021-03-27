@@ -21,6 +21,6 @@ jobs:
           
           # Show metrics
           echo "## Accuracy Metrics" >> report.md
-          cat ./metrics/metrics.json >> report.md
+          cat ./metrics/train_metrics.json >> report.md
           
           cml-send-comment report.md

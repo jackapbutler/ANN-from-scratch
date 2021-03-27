@@ -20,11 +20,12 @@ stages:
     deps:
     - 02c_sklearn_train.py
     - ./data/processed_data.csv
+    - ./experiments/params.yaml
     outs:
     - ./images/sklearn_mlp_loss_curve.png
     - ./models/sklearn_neuralnet.pkl
     metrics:
-    - ./metrics/metrics.json:
+    - ./metrics/train_metrics.json:
         cache: false
       
   evaluate:

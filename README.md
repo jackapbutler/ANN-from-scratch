@@ -15,3 +15,4 @@ Building an artificial neural network using only the NumPy Python library along 
 - Automate the unit testing on a dummy dataset with a certain number of features.
 - Automate a pipeline for getting data, processing data, training a model and storing metrics.
 - Automated the generation of reports and accuracy statistics using CML and GitHub Actions.
+- Automated performing experiments with different parameters and visualising results.
