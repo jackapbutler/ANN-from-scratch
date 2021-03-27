@@ -24,12 +24,12 @@ stages:
       md5: 60acca81995dc9744b499005ecfe6f2a
       size: 24059
   train_model:
-    cmd: python 02c_sklearn_MLP.py
+    cmd: python 02c_sklearn_train.py
     deps:
     - path: ./data/processed_data.csv
       md5: 60acca81995dc9744b499005ecfe6f2a
       size: 24059
-    - path: 02c_sklearn_MLP.py
+    - path: 02c_sklearn_train.py
       md5: 761da71c4111f7508d740719f0377e9c
       size: 1362
     outs:

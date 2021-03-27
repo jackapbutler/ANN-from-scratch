@@ -16,9 +16,9 @@ stages:
     - ./data/processed_data.csv
 
   train_model:
-    cmd: python 02c_sklearn_MLP.py
+    cmd: python 02c_sklearn_train.py
     deps:
-    - 02c_sklearn_MLP.py
+    - 02c_sklearn_train.py
     - ./data/processed_data.csv
     outs:
     - ./images/sklearn_mlp_loss_curve.png
