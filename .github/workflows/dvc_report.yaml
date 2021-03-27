@@ -6,7 +6,7 @@ jobs:
     container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: actions/checkout@v2
-      - name: 'Train my model'
+      - name: 'Executing model pipeline including Evaluation'
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -21,13 +21,13 @@ jobs:
           cml-publish ./images/sklearn_mlp_loss_curve.png --md >> report.md
           
           # Show basic training metrics metrics
-          echo "## Accuracy Metrics" >> report.md
+          echo "## Basic Training Accuracy Metrics" >> report.md
           cat ./metrics/train_metrics.json >> report.md
 
           # Evaluation metrics
           echo "## Evaluation Metrics" >> report.md
-          dvc metrics diff --show-md main >> report.md
-          dvc plots diff -x recall -y precision --show-md >> report.md
+          dvc metrics diff >> report.md
+          dvc plots diff -x recall -y precision >> report.md
           
 
 
